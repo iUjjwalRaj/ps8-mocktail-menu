@@ -40,7 +40,7 @@ function Drinks() {
       </div>
 
       {loading && <p className="status-message">Loading drinks...</p>}
-      {error && !loading && <p className="status-message status-error">{error}</p>}
+      {error && <p className="status-message status-error">{error}</p>}
       {!loading && !error && filteredDrinks.length === 0 && (
         <p className="status-message status-empty">No drinks found matching your search.</p>
       )}

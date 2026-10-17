@@ -4,7 +4,7 @@ import Drinks from "./pages/Drinks";
 import DrinkDetails from "./pages/DrinkDetails";
 import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
-import CursorMovement from "./components/CursorMovement";
+import CursorMovement from "./css/CursorMovement";
 import "./App.css";
 
 function App() {

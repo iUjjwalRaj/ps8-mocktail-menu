@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
-  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -10,28 +10,20 @@ function NavBar() {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/drinks" className={({ isActive }) => (isActive ? "active" : "")}>
-            Drinks
-          </NavLink>
+          <NavLink to="/drinks">Drinks</NavLink>
         </li>
         <li>
-          <button
-            onClick={toggleTheme}
-            className="theme-toggle"
-            aria-label="Toggle luxury dark mode"
-          >
+          <button onClick={toggleTheme} className="theme-toggle">
             {theme === "dark" ? "🌙" : "☀️"}
           </button>
         </li>

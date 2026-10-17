@@ -28,20 +28,6 @@ function DrinkDetails() {
       });
   }, [id]);
 
-  const ingredients = [];
-  if (drink) {
-    for (let i = 1; i <= 15; i++) {
-      const ingredient = drink[`strIngredient${i}`];
-      const measure = drink[`strMeasure${i}`];
-      if (ingredient && ingredient.trim() !== "") {
-        ingredients.push({
-          name: ingredient.trim(),
-          measure: measure ? measure.trim() : "",
-        });
-      }
-    }
-  }
-
   if (loading) {
     return (
       <div className="details-container">
@@ -50,27 +36,30 @@ function DrinkDetails() {
     );
   }
 
-  if (error) {
+  if (error || !drink) {
     return (
       <div className="details-container">
-        <p className="status-message status-error">{error}</p>
+        <p className="status-message status-error">{error || "Drink not found."}</p>
         <button onClick={() => navigate("/drinks")} className="back-btn">← Back to Drinks</button>
       </div>
     );
   }
 
-  if (!drink) {
-    return (
-      <div className="details-container">
-        <p className="status-message status-empty">Drink not found.</p>
-        <button onClick={() => navigate("/drinks")} className="back-btn">← Back to Drinks</button>
-      </div>
-    );
+  const ingredients = [];
+  for (let i = 1; i <= 15; i++) {
+    const ingredient = drink[`strIngredient${i}`];
+    const measure = drink[`strMeasure${i}`];
+    if (ingredient && ingredient.trim() !== "") {
+      ingredients.push({
+        name: ingredient.trim(),
+        measure: measure ? measure.trim() : "",
+      });
+    }
   }
 
   return (
     <div className="details-container">
-      <button onClick={() => navigate(-1)} className="back-btn">← Back to Drinks</button>
+      <button onClick={() => navigate("/drinks")} className="back-btn">← Back to Drinks</button>
       <div className="details-card">
         <img src={drink.strDrinkThumb} alt={drink.strDrink} className="details-image" />
         <div className="details-content">
