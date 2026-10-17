@@ -1,69 +1,80 @@
-# PS8 — Mocktail Menu
+# PS8 Mocktail Menu
 
-A boutique non-alcoholic cocktail café web application built with **React**, **Vite**, and **React Router** for IIT Guwahati's PS8 assignment.
+A polished, responsive mocktail discovery website featuring non-alcoholic drinks, handcrafted recipes, and interactive ambient themes. Built with **React**, **Vite**, and **React Router** for IIT Guwahati's PS8 assignment.
 
-**Repository**: [https://github.com/iUjjwalRaj/ps8-mocktail-menu](https://github.com/iUjjwalRaj/ps8-mocktail-menu)  
-**Live Deployment**: *[Add your deployed Vercel / Netlify URL here]*
+- **GitHub Repository**: [https://github.com/iUjjwalRaj/ps8-mocktail-menu](https://github.com/iUjjwalRaj/ps8-mocktail-menu)
+- **Live Deployment (Cloudflare Workers)**: [https://bar.feminismindia.com](https://bar.feminismindia.com)
+- **Vercel Deployment**: Configured separately via Vercel Dashboard for assignment submission
 
 ---
 
 ## Overview
 
-Mocktail Menu offers an artisanal, zero-proof beverage catalog powered by TheCocktailDB API. Designed with a boutique café aesthetic—featuring deep forest green, emerald, warm ivory, muted sage, and champagne gold accents—the application allows users to explore, search, and inspect recipes with complete measurements and preparation steps.
+Mocktail Menu offers an artisanal, zero-proof beverage catalog powered by TheCocktailDB API. Designed with a dual aesthetic—a warm botanical café light theme and a luxury underground neon nightclub dark theme—the application allows users to explore, search, and inspect recipes complete with glassware specifications, exact measurements, and preparation instructions.
 
 ---
 
 ## Features
 
-- **Editorial Home Page**: Ambient visual presentation with quick call-to-action navigation.
-- **Curated Menu (`/drinks`)**: Fetches non-alcoholic drinks, rendering responsive cards with images and drink names.
-- **Real-Time Controlled Search**: Instant client-side filtering by drink title.
-- **Dynamic Recipe Details (`/drinks/:id`)**: Displays glass type, category, ingredients list with exact measurements, and step-by-step instructions.
-- **Resilient States**: Handled loading indicators, empty search results, missing drink fallbacks, and network error notices.
-- **404 Catch-All (`*`)**: Boutique not-found page with easy return navigation to Home.
-- **Luxury Neon Nightclub Dark Mode**: Persistent theme toggle in the navbar switching between a warm botanical café (light mode) and an exclusive 2 AM neon cocktail lounge (dark mode) featuring electric violet, neon magenta, and cyan accents with drifting radial gradients.
-- **Single Page Application (SPA) Routing**: Configured with `vercel.json` rewrite rules to ensure nested route refreshes load seamlessly.
+- **Hero Landing Page (`/`)**: Ambient visual presentation with an editorial mocktail showcase and an Explore Drinks call-to-action.
+- **Curated Menu Catalogue (`/drinks`)**: Fetches non-alcoholic drinks from TheCocktailDB API, displaying responsive cards with imagery and titles.
+- **Real-Time Controlled Search**: Instant client-side filtering by drink name as the user types.
+- **Dynamic Recipe Details (`/drinks/:id`)**: Retrieves detailed specifications including glassware, category, an enumerated ingredient measurement list, and preparation instructions.
+- **Resilient UI States**: Dedicated indicators for loading states, network errors, empty search results, and missing recipes.
+- **Dual Aesthetic Themes**:
+  - **Light Mode**: Botanical café aesthetic featuring forest green, emerald, warm ivory, muted sage, and champagne gold.
+  - **Dark Mode**: 2 AM underground dance club atmosphere featuring ultraviolet, electric cyan, and hot magenta gradients, moving spotlight sweeps, and text shimmer.
+- **Interactive Cursor Lighting**: Smooth cursor-following spotlight in dark mode managed via requestAnimationFrame and CSS variables.
+- **404 Catch-All (`*`)**: Custom not-found view with seamless return navigation to the home page.
+- **Single Page Application (SPA) Routing**: Configured with edge routing rules on Cloudflare Workers and rewrite rules on Vercel to guarantee that direct navigation and page refreshes work across all routes.
 
 ---
 
-## Application Routes
+## Technology Stack
 
-| Route | View | Description |
-|---|---|---|
-| `/` | **Home** | Boutique hero introduction with Explore Drinks CTA |
-| `/drinks` | **Menu** | Non-alcoholic drinks gallery with controlled search filter |
-| `/drinks/:id` | **Recipe Details** | Dynamic route displaying drink specifications, ingredients, and instructions |
-| `*` | **Not Found** | Catch-all 404 page with return link |
-
----
-
-## API Reference
-
-The application interfaces directly with **TheCocktailDB**:
-
-1. **Non-Alcoholic Drinks Filter**:
-   ```
-   https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
-   ```
-   Retrieves non-alcoholic drink records containing `idDrink`, `strDrink`, and `strDrinkThumb`.
-
-2. **Recipe Details Lookup**:
-   ```
-   https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=DRINK_ID
-   ```
-   Retrieves complete recipe information, including `strGlass`, `strCategory`, `strInstructions`, and paired ingredient/measurement fields (`strIngredient1`–`15`, `strMeasure1`–`15`).
+- **Frontend Library**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vite.dev/)
+- **Client Routing**: [React Router v7](https://reactrouter.com/)
+- **Styling**: Vanilla CSS (modular per-page and per-component stylesheets)
+- **API**: [TheCocktailDB](https://www.thecocktaildb.com/api.php) (Non-alcoholic filter and recipe lookup)
+- **Hosting & Edge Deployments**:
+  - [Cloudflare Workers](https://workers.cloudflare.com/) (Custom Domain: `bar.feminismindia.com`)
+  - [Vercel](https://vercel.com/) (Assignment submission)
 
 ---
 
-## Screenshots
+## Project Structure
 
-*Below are screenshots showcasing the application interface:*
-
-### 1. Home Page
-![Mocktail Menu Home](./src/assets/hero.png)
-
-### 2. Drinks Collection
-*Run the application locally to preview the interactive gallery and search filter.*
+```text
+ps8-mocktail-menu/
+├── public/                 # Static public assets (favicon, icons)
+├── src/
+│   ├── assets/             # Local images and media (hero photography)
+│   ├── components/         # Shared UI components
+│   │   ├── NavBar.jsx      # Navigation links and light/dark theme switch
+│   │   └── NavBar.css      # Header navigation styling
+│   ├── css/                # Standalone visual effects
+│   │   ├── CursorMovement.jsx  # Pointer tracking and spotlight overlay
+│   │   └── CursorMovement.css  # Cursor spotlight styles and animations
+│   ├── pages/              # Application route pages
+│   │   ├── Home.jsx        # Landing hero view
+│   │   ├── Home.css
+│   │   ├── Drinks.jsx      # Non-alcoholic catalog and live search
+│   │   ├── Drinks.css
+│   │   ├── DrinkDetails.jsx# Dynamic recipe view with ingredients & instructions
+│   │   ├── DrinkDetails.css
+│   │   ├── NotFound.jsx    # 404 fallback page
+│   │   └── NotFound.css
+│   ├── App.jsx             # Root layout and React Router route configuration
+│   ├── App.css             # Base application layout styles
+│   ├── index.css           # Design tokens, color system, and dark mode animations
+│   └── main.jsx            # Application entry point
+├── dist/                   # Production build output
+├── package.json            # Scripts, dependencies, and metadata
+├── vite.config.js          # Vite build configuration
+├── wrangler.jsonc          # Cloudflare Workers Static Assets & domain configuration
+└── vercel.json             # Vercel SPA rewrite configuration
+```
 
 ---
 
@@ -71,37 +82,66 @@ The application interfaces directly with **TheCocktailDB**:
 
 ### Prerequisites
 
-- Node.js (v18+)
-- npm
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
 
-### Installation
+### Local Development
 
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/iUjjwalRaj/ps8-mocktail-menu.git
    cd ps8-mocktail-menu
    ```
 
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. Launch development server:
+3. **Start the development server**:
    ```bash
    npm run dev
    ```
+   Open `http://localhost:5173` (or the indicated port) in your browser.
 
-4. Build for production:
+4. **Run code linting**:
+   ```bash
+   npm run lint
+   ```
+
+5. **Build for production**:
    ```bash
    npm run build
    ```
 
+6. **Preview the production build locally**:
+   ```bash
+   npm run preview
+   ```
+
 ---
 
-## Deployment Configuration
+## Deployment
 
-For Single-Page Application (SPA) routing on Vercel, the repository includes `vercel.json`:
+The application is architected to run portably across edge and serverless platforms without modifying application source code.
+
+### 1. Cloudflare Workers (Custom Domain)
+
+The project is deployed to Cloudflare Workers with custom domain mapping at **[https://bar.feminismindia.com](https://bar.feminismindia.com)** using Cloudflare Workers Static Assets.
+
+- **Configuration File**: [`wrangler.jsonc`](./wrangler.jsonc)
+- **SPA Routing**: Uses `"not_found_handling": "single-page-application"` so that direct route visits and refreshes are handled by `index.html`.
+- **Deploying Updates**:
+   ```bash
+   npm run deploy:cf
+   ```
+   *(Runs `npm run build` followed by `npx wrangler deploy`)*
+
+> **Note**: Automated GitHub deployments on Cloudflare are not configured yet; deployments currently use the Wrangler CLI workflow. To enable continuous deployments from GitHub, connect the repository in the Cloudflare Dashboard under **Workers & Pages > Settings > Build & Deploy > Git Integration**.
+
+### 2. Vercel Deployment
+
+For assignment evaluation on Vercel, the project uses [`vercel.json`](./vercel.json):
 ```json
 {
   "rewrites": [
@@ -112,4 +152,15 @@ For Single-Page Application (SPA) routing on Vercel, the repository includes `ve
   ]
 }
 ```
-This ensures refreshing dynamic routes like `/drinks/12562` resolves correctly to the index template without 404 errors.
+This rewrite rule routes all navigation requests to `/index.html`, ensuring React Router handles all deep links.
+
+---
+
+## API Reference
+
+The application interfaces with **TheCocktailDB** public API:
+
+- **Filter Non-Alcoholic Drinks**:
+  `GET https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`
+- **Lookup Recipe Details**:
+  `GET https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}`
