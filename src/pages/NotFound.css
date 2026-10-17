@@ -1,54 +1,51 @@
 .notfound-container,
 .notfound-page {
-  max-width: 680px;
-  margin: 4rem auto;
-  padding: 4rem 2rem;
+  max-width: 650px;
+  margin: 5rem auto;
+  padding: 4.5rem 2.5rem;
   text-align: center;
   background: var(--color-ivory-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.notfound-container::before,
-.notfound-page::before {
+.notfound-container::before {
   content: '';
   position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 200px;
-  height: 200px;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
   border-radius: var(--radius-full);
   background: radial-gradient(circle, var(--color-gold-glow) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.notfound-code,
-.notfound-container h1,
-.notfound-page h1 {
+.notfound-container h1 {
   font-family: var(--font-serif);
-  font-size: clamp(4.5rem, 10vw, 7rem);
+  font-size: clamp(5rem, 12vw, 7.5rem);
   font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  text-shadow: 0 4px 18px rgba(198, 166, 107, 0.3);
 }
 
-.notfound-title,
-.notfound-container p:first-of-type,
-.notfound-page p:first-of-type {
+.notfound-container p:first-of-type {
   font-family: var(--font-serif);
   font-size: 1.85rem;
   color: var(--color-forest);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.notfound-desc,
-.notfound-container p:nth-of-type(2),
-.notfound-page p:nth-of-type(2) {
+.notfound-container p:nth-of-type(2) {
   font-size: 1.05rem;
   color: var(--color-charcoal-muted);
   max-width: 440px;
@@ -56,26 +53,22 @@
   line-height: 1.6;
 }
 
-.notfound-btn,
-.notfound-container a,
-.notfound-page a {
+.notfound-container a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: var(--color-forest);
   color: var(--color-ivory);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   letter-spacing: 0.04em;
-  padding: 0.85rem 2rem;
+  padding: 0.95rem 2.25rem;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
   transition: all var(--transition-smooth);
 }
 
-.notfound-btn:hover,
-.notfound-container a:hover,
-.notfound-page a:hover {
+.notfound-container a:hover {
   background: var(--color-gold);
   color: var(--color-forest);
   transform: translateY(-2px);
