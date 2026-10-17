@@ -21,6 +21,7 @@ Mocktail Menu offers an artisanal, zero-proof beverage catalog powered by TheCoc
 - **Dynamic Recipe Details (`/drinks/:id`)**: Displays glass type, category, ingredients list with exact measurements, and step-by-step instructions.
 - **Resilient States**: Handled loading indicators, empty search results, missing drink fallbacks, and network error notices.
 - **404 Catch-All (`*`)**: Boutique not-found page with easy return navigation to Home.
+- **Luxury Neon Nightclub Dark Mode**: Persistent theme toggle in the navbar switching between a warm botanical café (light mode) and an exclusive 2 AM neon cocktail lounge (dark mode) featuring electric violet, neon magenta, and cyan accents with drifting radial gradients.
 - **Single Page Application (SPA) Routing**: Configured with `vercel.json` rewrite rules to ensure nested route refreshes load seamlessly.
 
 ---
