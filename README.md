@@ -4,7 +4,7 @@ A polished, responsive mocktail discovery website featuring non-alcoholic drinks
 
 - **GitHub Repository**: [https://github.com/iUjjwalRaj/ps8-mocktail-menu](https://github.com/iUjjwalRaj/ps8-mocktail-menu)
 - **Live Deployment (Cloudflare Workers)**: [https://bar.feminismindia.com](https://bar.feminismindia.com)
-- **Vercel Deployment**: Configured separately via Vercel Dashboard for assignment submission
+- **Vercel Deployment**: [https://ps8-mocktail-menu-topaz.vercel.app](https://ps8-mocktail-menu-topaz.vercel.app)
 
 ---
 
