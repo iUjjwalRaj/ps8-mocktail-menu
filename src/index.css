@@ -88,7 +88,7 @@ body {
     radial-gradient(ellipse at 85% 85%, rgba(198, 166, 107, 0.15) 0%, transparent 50%),
     radial-gradient(ellipse at 50% 50%, rgba(28, 89, 73, 0.03) 0%, transparent 60%);
   background-attachment: fixed;
-  transition: background-color 0.45s ease, color 0.45s ease;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 [data-theme="dark"] body {
@@ -99,68 +99,68 @@ body {
 [data-theme="dark"] body::before {
   content: '';
   position: fixed;
-  inset: -40%;
-  width: 180%;
-  height: 180%;
+  inset: -45%;
+  width: 190%;
+  height: 190%;
   background:
-    radial-gradient(circle at 20% 25%, rgba(255, 0, 168, 0.38) 0%, transparent 40%),
-    radial-gradient(circle at 75% 30%, rgba(113, 0, 255, 0.42) 0%, transparent 42%),
-    radial-gradient(circle at 45% 75%, rgba(22, 75, 255, 0.36) 0%, transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.28) 0%, transparent 35%);
-  filter: blur(85px);
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 0, 168, 0.4) 18%, transparent 40%),
+    radial-gradient(circle at 75% 30%, rgba(0, 229, 255, 0.42) 0%, rgba(113, 0, 255, 0.4) 22%, transparent 45%),
+    radial-gradient(circle at 45% 75%, rgba(255, 255, 255, 0.35) 0%, rgba(22, 75, 255, 0.4) 20%, transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.32) 0%, transparent 35%);
+  filter: blur(80px);
   z-index: -2;
   pointer-events: none;
   will-change: transform;
-  animation: clubSpotlights 20s ease-in-out infinite alternate;
+  animation: clubSpotlightsFast 6.5s ease-in-out infinite alternate;
 }
 
 [data-theme="dark"] body::after {
   content: '';
   position: fixed;
-  inset: -35%;
-  width: 170%;
-  height: 170%;
+  inset: -40%;
+  width: 180%;
+  height: 180%;
   background:
-    radial-gradient(circle at 70% 20%, rgba(255, 45, 85, 0.32) 0%, transparent 35%),
-    radial-gradient(circle at 25% 70%, rgba(161, 0, 255, 0.38) 0%, transparent 40%),
-    radial-gradient(circle at 60% 60%, rgba(22, 75, 255, 0.3) 0%, transparent 45%);
-  filter: blur(100px);
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 45, 85, 0.35) 16%, transparent 36%),
+    radial-gradient(circle at 20% 70%, rgba(0, 229, 255, 0.35) 0%, rgba(161, 0, 255, 0.4) 20%, transparent 42%),
+    radial-gradient(circle at 60% 60%, rgba(22, 75, 255, 0.35) 0%, transparent 45%);
+  filter: blur(95px);
   z-index: -1;
   pointer-events: none;
   will-change: transform;
-  animation: clubHazeSweep 26s ease-in-out infinite alternate-reverse;
+  animation: clubHazeSweepFast 8.5s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes clubSpotlights {
+@keyframes clubSpotlightsFast {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(-7%, 8%) rotate(6deg) scale(1.1);
+    transform: translate(-9%, 10%) rotate(8deg) scale(1.15);
   }
   50% {
-    transform: translate(9%, -6%) rotate(-5deg) scale(0.95);
+    transform: translate(11%, -8%) rotate(-7deg) scale(0.92);
   }
   75% {
-    transform: translate(-8%, -10%) rotate(7deg) scale(1.08);
+    transform: translate(-10%, -12%) rotate(9deg) scale(1.1);
   }
   100% {
-    transform: translate(6%, 10%) rotate(-4deg) scale(1.02);
+    transform: translate(8%, 12%) rotate(-5deg) scale(1.04);
   }
 }
 
-@keyframes clubHazeSweep {
+@keyframes clubHazeSweepFast {
   0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
   }
   33% {
-    transform: translate(12%, -8%) scale(1.12) rotate(-7deg);
+    transform: translate(14%, -10%) scale(1.14) rotate(-9deg);
   }
   66% {
-    transform: translate(-10%, 12%) scale(0.94) rotate(9deg);
+    transform: translate(-12%, 14%) scale(0.92) rotate(11deg);
   }
   100% {
-    transform: translate(5%, -5%) scale(1.06) rotate(-3deg);
+    transform: translate(7%, -7%) scale(1.08) rotate(-4deg);
   }
 }
 
@@ -172,10 +172,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3 {
-  color: #F8F1FF;
-  text-shadow: 0 0 25px rgba(161, 0, 255, 0.45), 0 0 50px rgba(255, 0, 168, 0.25);
+[data-theme="dark"] .hero-content h1,
+[data-theme="dark"] .drinks-title,
+[data-theme="dark"] .drinks-container h1,
+[data-theme="dark"] .details-content h1,
+[data-theme="dark"] .notfound-container h1 {
+  background: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    #00E5FF 22%,
+    #FFFFFF 45%,
+    #FF00A8 68%,
+    #A100FF 88%,
+    #FFFFFF 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textClubShimmer 3.8s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.45)) drop-shadow(0 0 35px rgba(255, 0, 168, 0.35));
+}
+
+@keyframes textClubShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 p {
@@ -272,15 +296,6 @@ img {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-@keyframes neonPulseSlow {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(255, 0, 168, 0.5), 0 0 50px rgba(113, 0, 255, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 45px rgba(255, 0, 168, 0.8), 0 0 80px rgba(0, 229, 255, 0.4);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

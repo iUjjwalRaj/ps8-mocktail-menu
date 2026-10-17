@@ -17,24 +17,24 @@ nav,
 
 [data-theme="dark"] nav,
 [data-theme="dark"] .navbar {
-  background: rgba(5, 3, 11, 0.78);
+  background: rgba(5, 3, 11, 0.82);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(90deg, #FF00A8 0%, #7100FF 50%, #00E5FF 100%) 1;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 20px rgba(161, 0, 255, 0.25);
-  animation: navGlowPulse 8s ease-in-out infinite alternate;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 25px rgba(161, 0, 255, 0.35);
+  animation: navGlowPulseFast 5s ease-in-out infinite alternate;
 }
 
-@keyframes navGlowPulse {
+@keyframes navGlowPulseFast {
   0% {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 20px rgba(161, 0, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 20px rgba(161, 0, 255, 0.35);
   }
   50% {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 0, 168, 0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 0, 168, 0.5);
   }
   100% {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 229, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 229, 255, 0.45);
   }
 }
 
@@ -54,8 +54,19 @@ nav::before,
 
 [data-theme="dark"] nav::before,
 [data-theme="dark"] .navbar::before {
-  color: #F8F1FF;
-  text-shadow: 0 0 15px rgba(255, 0, 168, 0.8), 0 0 35px rgba(113, 0, 255, 0.5);
+  background: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    #00E5FF 25%,
+    #FFFFFF 50%,
+    #FF00A8 75%,
+    #FFFFFF 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textClubShimmer 4s linear infinite;
+  filter: drop-shadow(0 0 14px rgba(255, 0, 168, 0.7));
   letter-spacing: 0.12em;
 }
 
@@ -90,7 +101,7 @@ nav a,
 
 [data-theme="dark"] nav a,
 [data-theme="dark"] .nav-link {
-  color: var(--color-charcoal-muted);
+  color: #C3B5D9;
 }
 
 nav a::after,
@@ -109,8 +120,9 @@ nav a::after,
 
 [data-theme="dark"] nav a::after,
 [data-theme="dark"] .nav-link::after {
-  background: linear-gradient(90deg, #FF00A8, #00E5FF);
-  box-shadow: 0 0 12px rgba(255, 0, 168, 0.9);
+  background: linear-gradient(90deg, #FFFFFF, #00E5FF, #FF00A8);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 1);
+  transition: width 0.18s ease-out;
 }
 
 nav a:hover,
@@ -121,8 +133,10 @@ nav a:hover,
 
 [data-theme="dark"] nav a:hover,
 [data-theme="dark"] .nav-link:hover {
-  color: #00E5FF;
-  text-shadow: 0 0 12px rgba(0, 229, 255, 0.8);
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.9), 0 0 25px rgba(255, 0, 168, 0.6);
+  transform: translateY(-2px);
+  transition: all 0.15s ease-out;
 }
 
 nav a:hover::after,
@@ -139,8 +153,8 @@ nav a.active,
 
 [data-theme="dark"] nav a.active,
 [data-theme="dark"] .nav-link.active {
-  color: #FF00A8;
-  text-shadow: 0 0 14px rgba(255, 0, 168, 0.8);
+  color: #00E5FF;
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.9);
 }
 
 .theme-toggle {
@@ -168,13 +182,16 @@ nav a.active,
 
 [data-theme="dark"] .theme-toggle {
   background: rgba(36, 16, 61, 0.85);
-  border-color: rgba(255, 0, 168, 0.5);
-  box-shadow: 0 0 14px rgba(255, 0, 168, 0.4);
+  border-color: rgba(255, 0, 168, 0.6);
+  box-shadow: 0 0 16px rgba(255, 0, 168, 0.5);
 }
 
 [data-theme="dark"] .theme-toggle:hover {
   border-color: #00E5FF;
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 45px rgba(255, 0, 168, 0.5);
+  background: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.9), 0 0 50px rgba(255, 0, 168, 0.6);
+  transform: scale(1.15) rotate(20deg);
+  transition: all 0.15s ease-out;
 }
 
 @media (max-width: 680px) {

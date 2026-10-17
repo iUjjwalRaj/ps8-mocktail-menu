@@ -96,8 +96,20 @@
 }
 
 [data-theme="dark"] .details-content h1 {
-  color: #F8F1FF;
-  text-shadow: 0 0 30px rgba(161, 0, 255, 0.6);
+  background: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    #00E5FF 22%,
+    #FFFFFF 45%,
+    #FF00A8 68%,
+    #A100FF 88%,
+    #FFFFFF 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textClubShimmer 3.8s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 35px rgba(255, 0, 168, 0.4));
 }
 
 .details-meta {

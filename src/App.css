@@ -4,10 +4,36 @@
 @import './pages/DrinkDetails.css';
 @import './pages/NotFound.css';
 
+.cursor-spotlight {
+  display: none;
+}
+
+[data-theme="dark"] .cursor-spotlight {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    650px circle at var(--cursor-x, 50vw) var(--cursor-y, 50vh),
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(0, 229, 255, 0.19) 20%,
+    rgba(255, 0, 168, 0.14) 45%,
+    rgba(113, 0, 255, 0.06) 65%,
+    transparent 75%
+  );
+  mix-blend-mode: screen;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 main,
@@ -27,8 +53,10 @@ main,
 }
 
 [data-theme="dark"] .site-footer {
-  background: #090611;
-  border-top: 1px solid rgba(168, 85, 247, 0.25);
+  background: rgba(5, 3, 11, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(161, 0, 255, 0.3);
   color: #C3B5D9;
 }
 
@@ -42,7 +70,7 @@ main,
 
 [data-theme="dark"] .footer-brand {
   color: #F8F1FF;
-  text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  text-shadow: 0 0 15px rgba(255, 0, 168, 0.6);
 }
 
 .footer-text {

@@ -27,17 +27,17 @@
 }
 
 [data-theme="dark"] .home-container::before {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(255, 0, 168, 0.38) 0%, rgba(113, 0, 255, 0.22) 50%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 0, 168, 0.45) 25%, rgba(113, 0, 255, 0.3) 50%, transparent 70%);
   filter: blur(65px);
-  animation: clubMagentaSweep 14s ease-in-out infinite alternate;
+  animation: clubMagentaSweepFast 6.5s ease-in-out infinite alternate;
 }
 
-@keyframes clubMagentaSweep {
+@keyframes clubMagentaSweepFast {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-30px, 20px) scale(1.15); }
-  100% { transform: translate(25px, -15px) scale(0.9); }
+  50% { transform: translate(-35px, 25px) scale(1.18); }
+  100% { transform: translate(30px, -20px) scale(0.92); }
 }
 
 .home-container::after {
@@ -57,17 +57,17 @@
 }
 
 [data-theme="dark"] .home-container::after {
-  width: 440px;
-  height: 440px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.25) 0%, rgba(22, 75, 255, 0.3) 50%, transparent 70%);
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(0, 229, 255, 0.35) 25%, rgba(22, 75, 255, 0.35) 55%, transparent 70%);
   filter: blur(70px);
-  animation: clubCyanSweep 18s ease-in-out infinite alternate-reverse;
+  animation: clubCyanSweepFast 8s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes clubCyanSweep {
+@keyframes clubCyanSweepFast {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(35px, -25px) scale(1.1); }
-  100% { transform: translate(-20px, 30px) scale(0.95); }
+  50% { transform: translate(40px, -30px) scale(1.12); }
+  100% { transform: translate(-25px, 35px) scale(0.92); }
 }
 
 @keyframes floatOrb {
@@ -101,21 +101,21 @@
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(161, 0, 255, 0.4);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(113, 0, 255, 0.25);
-  animation: heroReflectGlow 10s ease-in-out infinite alternate;
+  animation: heroReflectGlowFast 6s ease-in-out infinite alternate;
 }
 
-@keyframes heroReflectGlow {
+@keyframes heroReflectGlowFast {
   0% {
-    border-color: rgba(161, 0, 255, 0.4);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(113, 0, 255, 0.25);
+    border-color: rgba(161, 0, 255, 0.45);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(113, 0, 255, 0.3);
   }
   50% {
-    border-color: rgba(255, 0, 168, 0.5);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 0, 168, 0.35);
+    border-color: rgba(255, 0, 168, 0.6);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 0, 168, 0.45);
   }
   100% {
-    border-color: rgba(0, 229, 255, 0.45);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 229, 255, 0.3);
+    border-color: rgba(0, 229, 255, 0.55);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 229, 255, 0.4);
   }
 }
 
@@ -140,8 +140,8 @@
   content: '✦ NIGHTCLUB ZERO-PROOF';
   color: #00E5FF;
   background: rgba(36, 16, 61, 0.9);
-  border: 1px solid rgba(0, 229, 255, 0.5);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+  border: 1px solid rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
   letter-spacing: 0.22em;
 }
 
@@ -153,11 +153,6 @@
   margin: 0;
   position: relative;
   transition: color 0.45s ease;
-}
-
-[data-theme="dark"] .hero-content h1 {
-  color: #F8F1FF;
-  text-shadow: 0 0 30px rgba(161, 0, 255, 0.6), 0 0 60px rgba(255, 0, 168, 0.4);
 }
 
 .hero-content p {
@@ -178,7 +173,7 @@
 
 [data-theme="dark"] .hero-content p:first-of-type {
   color: #00E5FF;
-  text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
 }
 
 .hero-content button {
@@ -204,18 +199,18 @@
 [data-theme="dark"] .hero-content button {
   background: linear-gradient(135deg, #FF00A8 0%, #A100FF 50%, #164BFF 100%);
   background-size: 200% 200%;
-  animation: gradientShift 5s ease infinite, buttonNightPulse 4s ease-in-out infinite;
+  animation: gradientShift 4s ease infinite, buttonNightPulseFast 3s ease-in-out infinite;
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 30px rgba(255, 0, 168, 0.6), 0 0 60px rgba(161, 0, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 35px rgba(255, 0, 168, 0.65), 0 0 70px rgba(161, 0, 255, 0.4);
 }
 
-@keyframes buttonNightPulse {
+@keyframes buttonNightPulseFast {
   0%, 100% {
-    box-shadow: 0 0 25px rgba(255, 0, 168, 0.55), 0 0 50px rgba(161, 0, 255, 0.3);
+    box-shadow: 0 0 25px rgba(255, 0, 168, 0.6), 0 0 50px rgba(161, 0, 255, 0.35);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 0, 168, 0.8), 0 0 75px rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 45px rgba(255, 0, 168, 0.9), 0 0 85px rgba(0, 229, 255, 0.6);
   }
 }
 
@@ -223,15 +218,20 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -120%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-  transition: left 0.6s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.5s ease;
+}
+
+[data-theme="dark"] .hero-content button::after {
+  background: linear-gradient(90deg, transparent, #FFFFFF 40%, rgba(0, 229, 255, 0.9) 70%, transparent);
+  transition: left 0.22s ease-out;
 }
 
 .hero-content button:hover::after {
-  left: 100%;
+  left: 120%;
 }
 
 .hero-content button:hover {
@@ -243,9 +243,9 @@
 }
 
 [data-theme="dark"] .hero-content button:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 45px rgba(0, 229, 255, 0.8), 0 0 90px rgba(255, 0, 168, 0.6);
-  border-color: #00E5FF;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 55px rgba(255, 0, 168, 0.9), 0 0 100px rgba(161, 0, 255, 0.75);
+  border-color: #FFFFFF;
 }
 
 .hero-content button:active {
@@ -267,22 +267,22 @@
 }
 
 [data-theme="dark"] .hero-image {
-  border: 2px solid rgba(161, 0, 255, 0.5);
-  animation: gentleFloat 6s ease-in-out infinite, imageAuraPulse 8s ease-in-out infinite alternate;
+  border: 2px solid rgba(161, 0, 255, 0.6);
+  animation: gentleFloat 6s ease-in-out infinite, imageAuraPulseFast 5s ease-in-out infinite alternate;
 }
 
-@keyframes imageAuraPulse {
+@keyframes imageAuraPulseFast {
   0% {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 0, 168, 0.45), 0 0 80px rgba(113, 0, 255, 0.25);
-    border-color: rgba(255, 0, 168, 0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 0, 168, 0.55), 0 0 90px rgba(113, 0, 255, 0.35);
+    border-color: rgba(255, 0, 168, 0.7);
   }
   50% {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 50px rgba(22, 75, 255, 0.5), 0 0 90px rgba(0, 229, 255, 0.35);
-    border-color: rgba(0, 229, 255, 0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 60px rgba(22, 75, 255, 0.6), 0 0 105px rgba(0, 229, 255, 0.45);
+    border-color: rgba(0, 229, 255, 0.7);
   }
   100% {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 45px rgba(161, 0, 255, 0.5), 0 0 85px rgba(255, 0, 168, 0.35);
-    border-color: rgba(161, 0, 255, 0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 50px rgba(161, 0, 255, 0.6), 0 0 95px rgba(255, 0, 168, 0.45);
+    border-color: rgba(161, 0, 255, 0.7);
   }
 }
 
