@@ -23,12 +23,6 @@ function Drinks() {
       });
   }, []);
 
-  const handleCardMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.setProperty("--card-x", `${e.clientX - rect.left}px`);
-    e.currentTarget.style.setProperty("--card-y", `${e.clientY - rect.top}px`);
-  };
-
   const filteredDrinks = drinks.filter((drink) =>
     drink.strDrink.toLowerCase().includes(search.toLowerCase())
   );
@@ -57,7 +51,6 @@ function Drinks() {
             to={`/drinks/${drink.idDrink}`}
             key={drink.idDrink}
             className="drink-card"
-            onMouseMove={handleCardMouseMove}
           >
             <img src={drink.strDrinkThumb} alt={drink.strDrink} />
             <h3>{drink.strDrink}</h3>

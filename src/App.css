@@ -4,29 +4,7 @@
 @import './pages/DrinkDetails.css';
 @import './pages/NotFound.css';
 
-.cursor-spotlight {
-  display: none;
-}
 
-[data-theme="dark"] .cursor-spotlight {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(
-    650px circle at var(--cursor-x, 50vw) var(--cursor-y, 50vh),
-    rgba(255, 255, 255, 0.24) 0%,
-    rgba(0, 229, 255, 0.19) 20%,
-    rgba(255, 0, 168, 0.14) 45%,
-    rgba(113, 0, 255, 0.06) 65%,
-    transparent 75%
-  );
-  mix-blend-mode: screen;
-}
 
 .app-container {
   display: flex;
