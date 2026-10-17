@@ -21,6 +21,13 @@
   letter-spacing: -0.01em;
 }
 
+[data-theme="dark"] .drinks-title,
+[data-theme="dark"] .drinks-container h1,
+[data-theme="dark"] .drinks-page h1 {
+  color: #F8F1FF;
+  text-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+}
+
 .drinks-subtitle {
   font-size: 1.1rem;
   color: var(--color-charcoal-muted);
@@ -50,6 +57,16 @@
   transition: all var(--transition-smooth);
 }
 
+[data-theme="dark"] .search-input,
+[data-theme="dark"] .drinks-container input[type="text"],
+[data-theme="dark"] .drinks-page input[type="text"] {
+  background-color: rgba(19, 11, 34, 0.9);
+  color: #F8F1FF;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  background-image: url("data:svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23A855F7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+}
+
 .search-input:focus,
 .drinks-container input[type="text"]:focus,
 .drinks-page input[type="text"]:focus {
@@ -57,6 +74,14 @@
   box-shadow: 0 0 0 4px var(--color-gold-glow), var(--shadow-md);
   outline: none;
   background-color: #ffffff;
+}
+
+[data-theme="dark"] .search-input:focus,
+[data-theme="dark"] .drinks-container input[type="text"]:focus,
+[data-theme="dark"] .drinks-page input[type="text"]:focus {
+  border-color: #56E6FF;
+  box-shadow: 0 0 0 4px rgba(86, 230, 255, 0.25), 0 0 25px rgba(168, 85, 247, 0.35);
+  background-color: rgba(24, 14, 43, 0.95);
 }
 
 .drinks-grid {
@@ -79,10 +104,23 @@
   position: relative;
 }
 
+[data-theme="dark"] .drink-card {
+  background: rgba(19, 11, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
 .drink-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--color-gold);
+}
+
+[data-theme="dark"] .drink-card:hover {
+  border-color: #FF38B8;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 56, 184, 0.25), 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
 .drink-card img {
@@ -91,6 +129,10 @@
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   background-color: var(--color-sage-light);
+}
+
+[data-theme="dark"] .drink-card img {
+  background-color: #130B22;
 }
 
 .drink-card:hover img {
@@ -105,6 +147,10 @@
   line-height: 1.25;
 }
 
+[data-theme="dark"] .drink-card h3 {
+  color: #F8F1FF;
+}
+
 .drink-card::after {
   content: 'Zero-Proof • View Recipe →';
   font-size: 0.85rem;
@@ -116,8 +162,17 @@
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
+[data-theme="dark"] .drink-card::after {
+  color: #56E6FF;
+}
+
 .drink-card:hover::after {
   color: var(--color-emerald);
+}
+
+[data-theme="dark"] .drink-card:hover::after {
+  color: #FF38B8;
+  text-shadow: 0 0 10px rgba(255, 56, 184, 0.6);
 }
 
 .status-message,
@@ -137,6 +192,13 @@
   color: var(--color-charcoal-muted);
 }
 
+[data-theme="dark"] .status-message,
+[data-theme="dark"] .state-container {
+  background: rgba(19, 11, 34, 0.85);
+  border: 1px dashed rgba(168, 85, 247, 0.35);
+  color: #C3B5D9;
+}
+
 .status-message::before {
   content: '';
   width: 44px;
@@ -148,10 +210,22 @@
   margin-bottom: 1.25rem;
 }
 
+[data-theme="dark"] .status-message::before {
+  border-color: rgba(168, 85, 247, 0.25);
+  border-top-color: #56E6FF;
+  box-shadow: 0 0 18px rgba(86, 230, 255, 0.4);
+}
+
 .status-error {
   background: #fff8f8;
   border-color: #fca5a5;
   color: #991b1b;
+}
+
+[data-theme="dark"] .status-error {
+  background: rgba(45, 12, 28, 0.85);
+  border-color: rgba(255, 56, 184, 0.5);
+  color: #ff85d0;
 }
 
 .status-error::before {

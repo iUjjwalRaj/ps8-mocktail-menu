@@ -13,6 +13,14 @@
   position: relative;
   overflow: hidden;
   animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: all var(--transition-smooth);
+}
+
+[data-theme="dark"] .notfound-container,
+[data-theme="dark"] .notfound-page {
+  background: rgba(19, 11, 34, 0.88);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(168, 85, 247, 0.2);
 }
 
 .notfound-container::before {
@@ -25,6 +33,11 @@
   border-radius: var(--radius-full);
   background: radial-gradient(circle, var(--color-gold-glow) 0%, transparent 70%);
   pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+[data-theme="dark"] .notfound-container::before {
+  background: radial-gradient(circle, rgba(255, 56, 184, 0.3) 0%, rgba(168, 85, 247, 0.15) 50%, transparent 70%);
 }
 
 .notfound-container h1 {
@@ -36,6 +49,12 @@
   margin-bottom: 0.5rem;
   letter-spacing: 0.04em;
   text-shadow: 0 4px 18px rgba(198, 166, 107, 0.3);
+  transition: all 0.45s ease;
+}
+
+[data-theme="dark"] .notfound-container h1 {
+  color: #FF38B8;
+  text-shadow: 0 0 25px rgba(255, 56, 184, 0.5), 0 0 50px rgba(168, 85, 247, 0.3);
 }
 
 .notfound-container p:first-of-type {
@@ -43,6 +62,12 @@
   font-size: 1.85rem;
   color: var(--color-forest);
   margin-bottom: 0.75rem;
+  transition: color 0.45s ease;
+}
+
+[data-theme="dark"] .notfound-container p:first-of-type {
+  color: #56E6FF;
+  text-shadow: 0 0 15px rgba(86, 230, 255, 0.4);
 }
 
 .notfound-container p:nth-of-type(2) {
@@ -68,9 +93,21 @@
   transition: all var(--transition-smooth);
 }
 
+[data-theme="dark"] .notfound-container a {
+  background: linear-gradient(135deg, #FF38B8 0%, #A855F7 100%);
+  color: #FFFFFF;
+  box-shadow: 0 0 25px rgba(255, 56, 184, 0.4);
+}
+
 .notfound-container a:hover {
   background: var(--color-gold);
   color: var(--color-forest);
   transform: translateY(-2px);
   box-shadow: var(--shadow-gold);
+}
+
+[data-theme="dark"] .notfound-container a:hover {
+  background: linear-gradient(135deg, #A855F7 0%, #56E6FF 100%);
+  color: #090611;
+  box-shadow: 0 0 35px rgba(86, 230, 255, 0.5), 0 0 50px rgba(255, 56, 184, 0.3);
 }

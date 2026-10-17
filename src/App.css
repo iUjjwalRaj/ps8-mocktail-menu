@@ -23,6 +23,13 @@ main,
   padding: 2.5rem 1.5rem;
   border-top: 1px solid rgba(198, 166, 107, 0.2);
   margin-top: auto;
+  transition: all var(--transition-smooth);
+}
+
+[data-theme="dark"] .site-footer {
+  background: #090611;
+  border-top: 1px solid rgba(168, 85, 247, 0.25);
+  color: #C3B5D9;
 }
 
 .footer-brand {
@@ -30,10 +37,20 @@ main,
   font-size: 1.35rem;
   color: var(--color-ivory);
   margin-bottom: 0.5rem;
+  transition: all var(--transition-smooth);
+}
+
+[data-theme="dark"] .footer-brand {
+  color: #F8F1FF;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
 .footer-text {
   font-size: 0.88rem;
   color: var(--color-sage);
   opacity: 0.85;
+}
+
+[data-theme="dark"] .footer-text {
+  color: #9d8db3;
 }
