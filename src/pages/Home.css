@@ -1,38 +1,39 @@
 .home-container,
-.home-page,
-main > div:only-child {
+.home-page {
   max-width: 1180px;
-  margin: 2.5rem auto 5rem;
+  margin: 3.5rem auto 5rem;
   padding: 0 1.5rem;
   position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
 }
 
-.home-container::before,
-main > div:only-child::before {
+.home-container::before {
   content: '';
   position: absolute;
   top: -60px;
   right: 5%;
-  width: 380px;
-  height: 380px;
+  width: 420px;
+  height: 420px;
   border-radius: var(--radius-full);
-  background: radial-gradient(circle, rgba(198, 166, 107, 0.22) 0%, rgba(220, 231, 217, 0.1) 45%, transparent 70%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(198, 166, 107, 0.25) 0%, rgba(220, 231, 217, 0.12) 45%, transparent 70%);
+  filter: blur(45px);
   z-index: -1;
   animation: floatOrb 12s ease-in-out infinite alternate;
   pointer-events: none;
 }
 
-.home-container::after,
-main > div:only-child::after {
+.home-container::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -40px;
   left: 5%;
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 360px;
   border-radius: var(--radius-full);
-  background: radial-gradient(circle, rgba(28, 89, 73, 0.12) 0%, rgba(220, 231, 217, 0.08) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(28, 89, 73, 0.14) 0%, rgba(220, 231, 217, 0.1) 50%, transparent 70%);
   filter: blur(50px);
   z-index: -1;
   animation: floatOrb 15s ease-in-out infinite alternate-reverse;
@@ -45,15 +46,13 @@ main > div:only-child::after {
   100% { transform: translate(-20px, 15px) scale(0.95); }
 }
 
-.hero-section,
-.home-container > div:first-child,
-main > div:only-child > div:first-child {
+.hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 1.25rem;
-  padding: 4rem 3.5rem;
+  padding: 3.5rem 3rem;
   background: var(--color-ivory-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -65,10 +64,8 @@ main > div:only-child > div:first-child {
   animation: fadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.hero-section::before,
-.home-container > div:first-child::before,
-main > div:only-child > div:first-child::before {
-  content: '✦ NON-ALCOHOLIC BOTANICALS';
+.hero-content::before {
+  content: '✦ ARTISANAL ZERO-PROOF';
   display: inline-block;
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -83,10 +80,8 @@ main > div:only-child > div:first-child::before {
   border: 1px solid rgba(28, 89, 73, 0.15);
 }
 
-.hero-title,
-.home-container h1,
-main > div:only-child h1 {
-  font-size: clamp(2.8rem, 6vw, 4.4rem);
+.hero-content h1 {
+  font-size: clamp(2.8rem, 5vw, 4rem);
   color: var(--color-forest);
   letter-spacing: -0.02em;
   line-height: 1.08;
@@ -94,28 +89,22 @@ main > div:only-child h1 {
   position: relative;
 }
 
-.hero-description,
-.home-container p,
-main > div:only-child p {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+.hero-content p {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   color: var(--color-charcoal-muted);
-  max-width: 620px;
+  max-width: 520px;
   line-height: 1.7;
   margin: 0;
 }
 
-.hero-description:first-of-type,
-.home-container p:first-of-type,
-main > div:only-child p:first-of-type {
+.hero-content p:first-of-type {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
   color: var(--color-emerald);
 }
 
-.hero-actions,
-.home-container button,
-main > div:only-child button {
+.hero-content button {
   margin-top: 1rem;
   display: inline-flex;
   align-items: center;
@@ -135,9 +124,7 @@ main > div:only-child button {
   transition: all var(--transition-smooth);
 }
 
-.hero-actions::after,
-.home-container button::after,
-main > div:only-child button::after {
+.hero-content button::after {
   content: '';
   position: absolute;
   top: 0;
@@ -148,15 +135,11 @@ main > div:only-child button::after {
   transition: left 0.6s ease;
 }
 
-.hero-actions:hover::after,
-.home-container button:hover::after,
-main > div:only-child button:hover::after {
+.hero-content button:hover::after {
   left: 100%;
 }
 
-.hero-actions:hover,
-.home-container button:hover,
-main > div:only-child button:hover {
+.hero-content button:hover {
   background: var(--color-forest);
   color: var(--color-ivory);
   transform: translateY(-3px) scale(1.02);
@@ -164,21 +147,21 @@ main > div:only-child button:hover {
   border-color: var(--color-gold);
 }
 
-.hero-actions:active,
-.home-container button:active,
-main > div:only-child button:active {
+.hero-content button:active {
   transform: translateY(0) scale(1);
 }
 
 .hero-image {
-  max-width: 360px;
-  margin: 2rem auto 0;
+  width: 100%;
+  max-width: 440px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  border: 4px solid #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 48px rgba(18, 59, 50, 0.18), 0 0 30px rgba(198, 166, 107, 0.2);
+  border: 1px solid rgba(198, 166, 107, 0.35);
   animation: gentleFloat 6s ease-in-out infinite;
+  display: block;
+  margin: 0 auto;
 }
 
 @keyframes gentleFloat {
@@ -186,15 +169,22 @@ main > div:only-child button:active {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
-@media (max-width: 768px) {
-  .hero-section,
-  .home-container > div:first-child,
-  main > div:only-child > div:first-child {
-    padding: 2.75rem 1.75rem;
-    gap: 1rem;
+@media (max-width: 860px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 2rem auto 4rem;
+  }
+
+  .hero-content {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .hero-image {
+    max-width: 340px;
   }
 }
